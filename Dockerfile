@@ -1,6 +1,6 @@
 FROM httpd
-WORKDIR /usr/local/apache2/htdocs
+WORKDIR /var/www/html
 RUN touch index.html
-RUN echo "This is my Dockerfile" > index.html
+RUN echo "This is my dockerfile" > index.html
 EXPOSE 80
-CMD ["httpd", "-D", "FOREGROUND"]
+CMD ["apache2ctl","-D", "FOREGROUND"]
